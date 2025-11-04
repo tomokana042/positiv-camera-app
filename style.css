@@ -1,43 +1,46 @@
 /* 全体 */
 body {
     font-family: "Helvetica Neue", "Arial", sans-serif;
-    background-color: #FDEDF1; /* 大人ピンクの淡い背景 */
+    background-color: #FDEDF1;
     text-align: center;
     margin: 0;
     padding: 20px;
 }
 
-/* タイトル */
-h1 {
-    color: #D77FA0; /* テキストの色 */
-    font-size: 32px;
+/* ヘッダー */
+header h1 {
+    color: #D77FA0;
+    font-size: 36px;
     margin-bottom: 25px;
-    text-shadow: 
-        0 0 5px #FFD1DC,   /* ピンクの光で明るく */
-        0 0 10px #FFD1DC;
+    text-shadow: 0 0 5px #FFD1DC, 0 0 10px #FFD1DC;
 }
 
-/* ファイル入力 */
+/* カメラセクション */
+#camera-section h2 {
+    font-size: 22px;
+    color: #7FBF9F;
+    margin-bottom: 15px;
+}
+
 input[type="file"] {
     display: block;
     margin: 0 auto 15px auto;
     padding: 12px;
     border-radius: 15px;
-    border: 2px solid #7FBF9F; /* グリーンアクセント */
+    border: 2px solid #7FBF9F;
     background-color: #FFF5F7;
     cursor: pointer;
 }
 
-/* ボタン */
 button {
     padding: 14px 28px;
     font-size: 16px;
-    background: linear-gradient(45deg, #D77FA0, #E68FA4); /* 大人ピンクグラデ */
+    background: linear-gradient(45deg, #D77FA0, #E68FA4);
     color: white;
     border: none;
     border-radius: 20px;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(215, 127, 160, 0.3);
+    box-shadow: 0 4px 6px rgba(215,127,160,0.3);
     transition: all 0.2s ease;
     font-weight: 600;
 }
@@ -47,77 +50,60 @@ button:hover {
     transform: translateY(-2px) scale(1.03);
 }
 
-/* 結果表示 */
 #result {
     margin-top: 20px;
     padding: 18px;
     font-size: 16px;
     color: #333;
-    background-color: #FBE7EB; /* 薄いピンク */
+    background-color: #FBE7EB;
     border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(127, 191, 159, 0.2); /* 緑の影でアクセント */
+    box-shadow: 0 4px 6px rgba(127,191,159,0.2);
     white-space: pre-wrap;
 }
 
-/* 広告 */
-#ad {
+/* PayPay広告 */
+#paypay-ad {
     margin-top: 25px;
     padding: 18px;
-    background-color: #F0F9F5; /* ミントグリーンの淡い背景 */
+    background-color: #F0F9F5;
     border: 2px solid #7FBF9F;
     border-radius: 15px;
 }
 
-#paypay-ad {
-    margin-top: 25px;
-    padding: 18px;
-    background-color: #FFECF6; /* 明るいピンク */
-    border: 2px solid #E68FA4;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(230, 143, 164, 0.2);
-    text-align: center;
-}
-
 #paypay-ad h2 {
-    color: #D77FA0;
-    font-size: 24px;
+    font-size: 20px;
+    color: #7FBF9F;
     margin-bottom: 10px;
 }
 
 #paypay-ad p {
-    color: #333;
-    font-size: 16px;
-    margin-bottom: 15px;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
 }
 
 #paypay-ad button {
-    padding: 12px 24px;
-    background-color: #FF7F92;
+    background: linear-gradient(45deg, #7FBF9F, #A3D9C4);
     color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: bold;
-    box-shadow: 0 4px 6px rgba(215, 127, 160, 0.3);
-    transition: all 0.2s ease;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-weight: 600;
+    box-shadow: 0 3px 5px rgba(127,191,159,0.3);
 }
-
 #paypay-ad button:hover {
-    background-color: #FF4F6B;
-    transform: scale(1.05);
+    background: linear-gradient(45deg, #A3D9C4, #7FBF9F);
 }
 
-/* レスポンシブデザイン */
-@media screen and (max-width: 600px) {
-    h1 {
-        font-size: 28px;
-    }
-    input[type="file"] {
-        width: 100%;
-        padding: 10px;
-    }
-    button {
-        width: 100%;
-    }
+/* フッター */
+footer {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #999;
 }
 
+/* レスポンシブ */
+@media (max-width: 480px) {
+    h1 { font-size: 28px; }
+    #camera-section h2 { font-size: 20px; }
+    button { font-size: 14px; padding: 12px 24px; }
+}

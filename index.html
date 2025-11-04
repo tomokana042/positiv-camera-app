@@ -2,70 +2,56 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <title>ポジカメ - AIで写真を評価できるカメラアプリ</title>
+  <meta name="description" content="ポジカメはAIで写真を評価できる大人ガーリーなカメラアプリ。スマホ対応、PayPay広告あり。写真を撮るだけでAIが評価・アドバイスします。">
+  <meta name="keywords" content="ポジカメ, AIカメラ, カメラアプリ, 写真評価, ガーリー, スマホカメラ, 写真AI">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AI Cameraは画像を評価し、ポジティブなフィードバックを提供するアプリです。写真を簡単に評価して、前向きなアドバイスをもらいましょう！">
-  <meta name="keywords" content="AI Camera, 画像評価, ポジティブフィードバック, 写真評価, 写真アプリ">
   
-  <!-- Open Graph Tags for Facebook and LinkedIn -->
-  <meta property="og:title" content="AI Camera - 画像評価アプリ">
-  <meta property="og:description" content="AI Cameraはあなたの写真を評価し、ポジティブなフィードバックを提供するアプリです。">
-  <meta property="og:image" content="画像URL（例: アイコンやスクリーンショット）">
+  <!-- SNS OGタグ -->
+  <meta property="og:title" content="ポジカメ - AIで写真を評価できるカメラアプリ">
+  <meta property="og:description" content="写真を撮るだけでAIが評価・アドバイスします。大人ガーリーなデザイン、PayPay広告付き！">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://tomokana042.github.io/positiv-camera-app/">
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:title" content="AI Camera - 画像評価アプリ">
-  <meta name="twitter:description" content="AI Cameraは画像を評価して、ポジティブなフィードバックを提供します。">
-  <meta name="twitter:image" content="画像URL（例: アイコンやスクリーンショット）">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://tomokana042.github.io/positiv-camera-app/camera_preview.png">
 
-  <title>AI Camera - 画像評価アプリ</title>
-  
+  <!-- Twitterカード -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ポジカメ - AIで写真を評価できるカメラアプリ">
+  <meta name="twitter:description" content="写真を撮るだけでAIが評価・アドバイスします。大人ガーリーなデザイン、PayPay広告付き！">
+  <meta name="twitter:image" content="https://tomokana042.github.io/positiv-camera-app/camera_preview.png">
+
   <link rel="stylesheet" href="style.css">
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
 </head>
 <body>
-  <h1>
-    💗 ポジカメ 💗
-  </h1>
+  <header>
+    <h1>💗 ポジカメ 💗</h1>
+  </header>
 
-  <input type="file" id="cameraInput" accept="image/*" capture="environment">
-  <button onclick="sendImage()">評価する</button>
+  <main>
+    <section id="camera-section">
+      <h2>写真を撮ってAI評価</h2>
+      <input type="file" id="cameraInput" accept="image/*" capture="environment">
+      <button onclick="sendImage()">評価する</button>
+      <div id="result"></div>
+    </section>
 
-  <div id="result"></div>
+    <!-- PayPay広告 -->
+    <section id="paypay-ad">
+      <h2>PayPayで今すぐ登録！🎉</h2>
+      <p>PayPayアカウントを作成してお得に始めよう！</p>
+      <button onclick="redirectToPayPay()">今すぐ登録</button>
+    </section>
+  </main>
 
-  <!-- PayPay広告セクション -->
-  <div id="paypay-ad">
-    <h2>PayPayでお支払いで10%OFF！🎉</h2>
-    <p>今すぐPayPayでお支払いいただくと、10%の割引を提供します！</p>
-    <button onclick="redirectToPayPay()">今すぐ登録</button>
-  </div>
+  <footer>
+    <p>&copy; 2025 ポジカメ</p>
+  </footer>
 
-  <div id="ad">
-  </div>
+  <script>
+    function redirectToPayPay() {
+      window.location.href = 'https://paypay.ne.jp/';
+    }
+  </script>
 </body>
 </html>
-
-<script>
-  // PayPayへの遷移を行う関数（実際のPayPay連携に必要な処理を組み込む）
-  function redirectToPayPay() {
-    window.location.href = 'https://paypay.ne.jp/';
-  }
-
-  async function sendImage() {
-    const input = document.getElementById("cameraInput");
-    if (!input.files.length) return alert("画像を選択してください");
-
-    const file = input.files[0];
-    const formData = new FormData();
-    formData.append("image", file);
-
-    const response = await fetch("http://172.20.10.7:5000/predict", {
-        method: "POST",
-        body: formData
-    });
-
-    const data = await response.json();
-    document.getElementById("result").innerText =
-        `総合評価: ${Math.round(data.total)}\n評価: ${data.evaluation}\nアドバイス: ${data.advice}`;
-  }
-</script>
