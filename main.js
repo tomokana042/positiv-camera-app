@@ -63,4 +63,4 @@ const evaluation = data.evaluation ?? '';
 const advice = data.advice ?? '';
 
 
-const text = `【総合スコア】 ${score}点\n【評価】 ${evaluation}\n\n【アドバイス】\n${advice}\n\n★ ポジティブコメント ★\n・${getRandomComme
+const text
