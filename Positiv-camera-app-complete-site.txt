@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="google-site-verification" content="YCN6mogq2UeroBWJ_-s9tl2_wnTmbH2IDqX7LLUeDlo" />
+<meta charset="UTF-8">
+<title>ポジカメ｜AI写真でポジティブになるカメラアプリ</title>
+<meta name="description" content="ポジカメはAIが優しく写真を評価し、ポジティブなコメントであなたの気持ちをサポートするカメラアプリ。AI×写真×メンタルケアで毎日ちょっと前向きに。">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="ポジカメ, AIカメラ, ポジティブ, メンタルケア, 写真で元気, 写真評価">
+<meta property="og:title" content="ポジカメ｜AI写真でポジティブになるカメラアプリ">
+<meta property="og:description" content="AIが写真を丁寧に評価し、ポジティブなフィードバックであなたを応援します。">
+<meta property="og:image" content="https://tomokana042.github.io/positiv-camera-app/camera_preview.png">
+<link rel="stylesheet" href="style.css">
+<script src="main.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+<div class="container">
+<h1>💗 ポジカメ 💗</h1>
+<nav class="main-nav">
+<a href="index.html">トップ</a>
+<a href="positive-ai.html">AI×ポジティブ</a>
+<a href="mental-camera.html">写真とメンタル</a>
+<a href="photo-and-mental.html">実践ガイド</a>
+<a href="how-to-positive.html">撮り方ハウツー</a>
+<a href="about.html">About</a>
+</nav>
+</div>
+</header>
+
+
+<main class="container">
+<section class="hero">
+<h2>AIがあなたの写真をやさしく評価。気持ちが前向きになるカメラアプリ</h2>
+<p class="lead">ポジカメは、写真を撮るだけでAIが構図・明るさ・色・雰囲気を分析し、ポジティブなフィードバックを返します。毎日の写真で気持ちを整えましょう。</p>
+</section>
+
+
+<section id="camera-section" class="card">
+<h3>写真を撮って評価してもらう</h3>
+<input type="file" id="cameraInput" accept="image/*" capture="environment">
+<div class="controls">
+<button id="sendBtn">AIが評価する</button>
+<button id="clearBtn" class="secondary">結果を消す</button>
+</div>
+<div id="result" aria-live="polite"></div>
+</section>
+
+
+<section id="features" class="card">
+<h3>このアプリの特徴</h3>
+<ul>
+<li>AIが丁寧に採点・改善提案</li>
+<li>ポジティブなコメントで自己肯定感をサポート</li>
+<li>スマホだけで使えるWebアプリ</li>
+<li>写真の上達に直結する実践アドバイス</li>
+</ul>
+</section>
+
+
+<section id="seo-snippet" class="card">
+<h3>ポジカメが目指すこと</h3>
+<p>写真で自己肯定感を育てる「日常のメンタルケアツール」。AIの肯定的フィードバックで、小さな成功体験を日々積めるように設計されています。</p>
+</section>
+
+
+</main>
+
+
+<footer class="site-footer">
+<div class="container">
+<p>&copy; 2025 ポジカメ — AIで写真を通したポジティブ体験</p>
+<p><a href="sitemap.xml">サイトマップ</a> ・ <a href="about.html">開発者について</a></p>
+</div>
+</footer>
+</body>
+</html>
